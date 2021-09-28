@@ -101,6 +101,8 @@
 }
 .main__title {
   margin: 118px 0 18px;
+  position: relative;
+  z-index: 1;
   font-family: Montserrat-Bold, sans-serif;
   font-style: normal;
   font-weight: bold;
@@ -110,6 +112,8 @@
   color: #000000;
 }
 .main__subtitle {
+  position: relative;
+  z-index: 1;
   max-width: 621px;
   margin-left: auto;
   margin-right: auto;
@@ -208,6 +212,9 @@
   left: calc(50% - 426px);
   z-index: 1;
 }
+.main__big-pizza img {
+  width: 100%;
+}
 .main__floor {
   position: absolute;
   bottom: 0;
@@ -224,7 +231,7 @@
   position: relative;
 }
 .form-block__container {
-  padding: 82px 0 278px;
+  padding: 82px 0 0px;
   position: relative;
   text-align: center;
 }
@@ -298,6 +305,9 @@
   position: absolute;
   transform: translate(-50%, -50%);
   top: 500px;
+}
+.form-block__car img {
+  width: 100%;
 }
 .footer__container {
   padding: 33px 0 51px;
@@ -395,10 +405,11 @@
 .pizza__item {
   position: relative;
   background: url(../images/pizza-line.svg);
-  background-size: cover;
+  /* background-size: cover; */
+  background-size: 100% 100%;
   background-position: center;
   width: 263px;
-  height: 425px;
+  padding-bottom: 8px;
   text-align: center;
 }
 .pizza__item:hover {
@@ -425,6 +436,7 @@
   font-size: 16px;
   line-height: 140%;
   color: #000000;
+  max-width: 181px;
 }
 .pizza__diametr {
   font-style: normal;
@@ -584,4 +596,14 @@
 }
 #burger {
   display: none;
+}
+#scene2 {
+  position: relative;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  top: 68px;
+}
+.main__container {
+  overflow: hidden;
 }

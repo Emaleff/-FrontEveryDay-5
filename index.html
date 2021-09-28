@@ -44,7 +44,7 @@
 
       </div>
 
-      <div class="container main__container">
+      <div class="container main__container" >
         <h1 class="main__title">Food delivery in Kovel</h1>
         <div class="main__subtitle">
           If you decide to relax or have unexpected guests, call us. We make
@@ -55,8 +55,12 @@
         <!-- <img src="./images/mushrooms.png" class="main__mushrooms" alt="" /> -->
         <img src="./images/fungus.png" class="main__fungus" alt="" />
         <!-- <img src="./images/left-pepper.png" class="main__left-pepper" alt="" /> -->
-      
-        <img src="./images/big-pizza.png" class="main__big-pizza" alt="" />
+        <!-- <div data-relative-input="true" id="scene"> -->
+          <div id="scene" data-relative-input="true" class="main__big-pizza">
+         <img src="./images/big-pizza.png" data-depth="0.2" 
+               alt="" />
+         </div>
+        <!-- </div> -->
       </div>
       <img src="./images/main-img.svg" class="main__main-img" alt="" />
       <img src="./images/mini-pizza.png" class="main__mini-pizza" alt="" />
@@ -71,13 +75,13 @@
       <div class="container content__container">
         <h2 class="content__title">Popular dishes</h2>
         <div class="content__buttons">
-          <button class="content__btn content__btn_small content__btn_active">
+          <button class="content__btn content__btn_small content__btn_active" data-tab="tab">
             Pizza
           </button>
-          <button class="content__btn content__btn_small">Sushi</button>
-          <button class="content__btn">Salad</button>
-          <button class="content__btn">Dessert</button>
-          <button class="content__btn">Drinks</button>
+          <button class="content__btn content__btn_small" data-tab="tab">Sushi</button>
+          <button class="content__btn" data-tab="tab">Salad</button>
+          <button class="content__btn" data-tab="tab">Dessert</button>
+          <button class="content__btn" data-tab="tab">Drinks</button>
         </div>
 
         <div class="pizza__container">
@@ -238,21 +242,26 @@
         </div>
         <form class="form">
           <input
+          required
             type="text"
             class="form__item form__input"
             placeholder="Your name"
           />
           <input
+          required
             type="text"
             class="form__item form__input"
             placeholder="Phone number"
           />
-          <button type="button" class="form__item form__button">
+          <button class="form__item form__button">
             Сall back
             <img src="./images/form-svg.svg" alt="" />
           </button>
         </form>
-        <img src="./images/car.png" class="form-block__car" alt="" />
+        <div id="scene2">
+          <img src="./images/car.png"  data-depth="0.6" alt="">
+        </div>
+           <!-- <img  src="./images/car.png" class="form-block__car" alt=""  /> -->
       </div>
     </div>
 
@@ -267,6 +276,7 @@
       </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
     <script>
       const burger = document.getElementById("burger");
       const links = document.querySelector(".header__links");
@@ -279,6 +289,21 @@
     links.addEventListener("click", ()=>{
       links.classList.remove("open")
     })
+
+      var scene = document.getElementById('scene');
+      var parallaxInstance = new Parallax(scene);
+
+      var scene2 = document.getElementById('scene2');
+      var parallaxInstance = new Parallax(scene2);
+     
+      const tabs = document.querySelectorAll("[data-tab]");
+      tabs.forEach((tab)=>{
+        tab.addEventListener("click", ()=>{
+          tabs.forEach((tab)=>{tab.classList.remove("content__btn_active")})
+          tab.classList.add("content__btn_active");
+        });
+        console.log("aa");
+      })
     </script>
   </body>
 </html>
