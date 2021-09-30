@@ -15,6 +15,8 @@
 .main {
   background: #f0f5fb;
   position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 .container {
   max-width: 1160px;
@@ -219,19 +221,20 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  z-index: 0;
+  z-index: -1;
   mix-blend-mode: screen;
 }
 .form-block {
   background: #f0f5fb;
-  background-image: url(../images/bg-form.png);
+  /* background-image: url(../images/bg-form.png); */
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
   position: relative;
+  overflow: hidden;
 }
 .form-block__container {
-  padding: 82px 0 0px;
+  padding: 82px 0 282px;
   position: relative;
   text-align: center;
 }
@@ -303,8 +306,11 @@
 }
 .form-block__car {
   position: absolute;
-  transform: translate(-50%, -50%);
+  height: auto;
+  width: auto;
   top: 500px;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .form-block__car img {
   width: 100%;
@@ -404,13 +410,21 @@
 }
 .pizza__item {
   position: relative;
-  background: url(../images/pizza-line.svg);
+  /* background: url(../images/pizza-line.svg); */
   /* background-size: cover; */
   background-size: 100% 100%;
   background-position: center;
   width: 263px;
   padding-bottom: 8px;
   text-align: center;
+}
+.pizza__line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 .pizza__item:hover {
   top: 3px;
@@ -465,13 +479,38 @@
   text-align: center;
   margin-top: 19px;
   color: #121146;
+  padding-bottom: 70px;
+}
+.pizza__hit {
+  position: absolute;
+  top: 24px;
+  left: 19px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 140%;
+  color: #ffffff;
+  width: 60px;
+  height: 25px;
+  box-sizing: border-box;
+  background: linear-gradient(116.88deg, #fe3326 -4.28%, #f26e0e 112.69%),
+    #59aaf1;
+  box-shadow: 0px 4px 8px rgba(205, 71, 41, 0.26);
+  border-radius: 3px;
 }
 .pizza__buy {
   width: 33px;
-  margin-left: auto;
+  /* margin-left: auto;
   margin-right: auto;
   margin-top: 18px;
-  position: relative;
+  position: relative; */
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translate(-50%, -50%);
   height: 33px;
   box-sizing: border-box;
   border-radius: 50%;
@@ -498,6 +537,7 @@
   grid-column-gap: 20px;
   grid-row-gap: 10px;
   justify-content: center;
+  align-items: baseline;
 }
 .reload {
   width: 60px;
@@ -597,13 +637,28 @@
 #burger {
   display: none;
 }
-#scene2 {
-  position: relative;
-  width: 70%;
-  margin-left: auto;
-  margin-right: auto;
-  top: 68px;
+#scene {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }
 .main__container {
   overflow: hidden;
+}
+.main__big-pizza {
+  padding-top: 300px;
+  padding-left: 150px;
+}
+#scene2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.scene2-bg {
+  width: 100%;
+  padding-top: 100px;
 }

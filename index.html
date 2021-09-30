@@ -10,7 +10,12 @@
   </head>
   <body>
     <main class="main">
-      <img src="./images/main-img.png" class="main__img" alt="">
+      <div id="scene" data-relative-input="true">
+        <img src="./images/main-img.png" class="main__img" alt="" data-depth="0.6"/>
+        <div class="main__big-pizza" data-depth="0.4">
+          <img src="./images/big-pizza.png" data-depth="0.2" alt="" />
+        </div>
+      </div>
 
       <div class="container header__container">
         <div class="header__links">
@@ -41,10 +46,9 @@
         </div>
 
         <span class="header__burger burger" id="burger"> &#9776 </span>
-
       </div>
 
-      <div class="container main__container" >
+      <div class="container main__container">
         <h1 class="main__title">Food delivery in Kovel</h1>
         <div class="main__subtitle">
           If you decide to relax or have unexpected guests, call us. We make
@@ -56,13 +60,10 @@
         <img src="./images/fungus.png" class="main__fungus" alt="" />
         <!-- <img src="./images/left-pepper.png" class="main__left-pepper" alt="" /> -->
         <!-- <div data-relative-input="true" id="scene"> -->
-          <div id="scene" data-relative-input="true" class="main__big-pizza">
-         <img src="./images/big-pizza.png" data-depth="0.2" 
-               alt="" />
-         </div>
+        <div class="main__big-pizza"></div>
+        <!-- <img src="./images/main-img.svg" data-depth="0.6" class="main__main-img" alt="" /> -->
         <!-- </div> -->
       </div>
-      <img src="./images/main-img.svg" class="main__main-img" alt="" />
       <img src="./images/mini-pizza.png" class="main__mini-pizza" alt="" />
       <!-- <img src="./images/tomato.png" class="main__tomato" alt="" /> -->
       <img src="./images/flour.png" class="main__floor" alt="" />
@@ -75,10 +76,15 @@
       <div class="container content__container">
         <h2 class="content__title">Popular dishes</h2>
         <div class="content__buttons">
-          <button class="content__btn content__btn_small content__btn_active" data-tab="tab">
+          <button
+            class="content__btn content__btn_small content__btn_active"
+            data-tab="tab"
+          >
             Pizza
           </button>
-          <button class="content__btn content__btn_small" data-tab="tab">Sushi</button>
+          <button class="content__btn content__btn_small" data-tab="tab">
+            Sushi
+          </button>
           <button class="content__btn" data-tab="tab">Salad</button>
           <button class="content__btn" data-tab="tab">Dessert</button>
           <button class="content__btn" data-tab="tab">Drinks</button>
@@ -86,6 +92,7 @@
 
         <div class="pizza__container">
           <div class="pizza__item">
+            <img src="./images/pizza-line.svg" alt="" class="pizza__line" />
             <img src="./images/pizza1.png" alt="" class="pizza__img" />
             <div class="pizza__info">
               <div class="pizza__title">Quattro formaggi</div>
@@ -99,6 +106,7 @@
           </div>
 
           <div class="pizza__item">
+            <img src="./images/pizza-line.svg" alt="" class="pizza__line" />
             <img src="./images/pizza2.png" alt="" class="pizza__img" />
             <div class="pizza__info">
               <div class="pizza__title">Карбонара</div>
@@ -112,6 +120,8 @@
           </div>
 
           <div class="pizza__item">
+            <div class="pizza__hit">Хіт</div>
+            <img src="./images/pizza-line.svg" alt="" class="pizza__line" />
             <img src="./images/pizza3.png" alt="" class="pizza__img" />
             <div class="pizza__info">
               <div class="pizza__title">Філадельфія селмон</div>
@@ -125,6 +135,7 @@
           </div>
 
           <div class="pizza__item">
+            <img src="./images/pizza-line.svg" alt="" class="pizza__line" />
             <img src="./images/pizza4.png" alt="" class="pizza__img" />
             <div class="pizza__info">
               <div class="pizza__title">Ді маре</div>
@@ -138,6 +149,7 @@
           </div>
 
           <div class="pizza__item">
+            <img src="./images/pizza-line.svg" alt="" class="pizza__line" />
             <img src="./images/pizza5.png" alt="" class="pizza__img" />
             <div class="pizza__info">
               <div class="pizza__title">Кватро формаджіо</div>
@@ -151,6 +163,7 @@
           </div>
 
           <div class="pizza__item">
+            <img src="./images/pizza-line.svg" alt="" class="pizza__line" />
             <img src="./images/pizza6.png" alt="" class="pizza__img" />
             <div class="pizza__info">
               <div class="pizza__title">Кватро формаджіо</div>
@@ -164,6 +177,7 @@
           </div>
 
           <div class="pizza__item">
+            <img src="./images/pizza-line.svg" alt="" class="pizza__line" />
             <img src="./images/pizza7.png" alt="" class="pizza__img" />
             <div class="pizza__info">
               <div class="pizza__title">Кватро формаджіо</div>
@@ -177,6 +191,7 @@
           </div>
 
           <div class="pizza__item">
+            <img src="./images/pizza-line.svg" alt="" class="pizza__line" />
             <img src="./images/pizza8.png" alt="" class="pizza__img" />
             <div class="pizza__info">
               <div class="pizza__title">Кватро формаджіо</div>
@@ -233,22 +248,27 @@
       </div>
     </div>
     <div class="form-block">
-      <img src="./images/form-img1.png" class="form-block__img1" alt="" />
-      <img src="./images/form-img2.png" class="form-block__img2" alt="" />
-      <img src="./images/form-img3.png" class="form-block__img3" alt="" />
+      <div id="scene2" data-relative-input="true">
+       
+        <img src="./images/bg-form.png" data-depth="0.2" class="scene2-bg" alt="">
+      </div>
+     
       <div class="container form-block__container">
+        <img src="./images/form-img3.png" data-depth="0.9" class="form-block__img3" alt="" />
+        <img src="./images/form-img1.png" data-depth="0.3" class="form-block__img1" alt="" />
+        <img src="./images/form-img2.png" data-depth="0.5" class="form-block__img2" alt="" />
         <div class="form-block__title">
           Fill out the form and we will call you
         </div>
         <form class="form">
           <input
-          required
+            required
             type="text"
             class="form__item form__input"
             placeholder="Your name"
           />
           <input
-          required
+            required
             type="text"
             class="form__item form__input"
             placeholder="Phone number"
@@ -258,10 +278,7 @@
             <img src="./images/form-svg.svg" alt="" />
           </button>
         </form>
-        <div id="scene2">
-          <img src="./images/car.png"  data-depth="0.6" alt="">
-        </div>
-           <!-- <img  src="./images/car.png" class="form-block__car" alt=""  /> -->
+        <img  src="./images/car.png" class="form-block__car" alt=""  />
       </div>
     </div>
 
@@ -281,29 +298,29 @@
       const burger = document.getElementById("burger");
       const links = document.querySelector(".header__links");
 
-
-      burger.addEventListener("click", ()=>{
+      burger.addEventListener("click", () => {
         links.classList.add("open");
       });
 
-    links.addEventListener("click", ()=>{
-      links.classList.remove("open")
-    })
+      links.addEventListener("click", () => {
+        links.classList.remove("open");
+      });
 
-      var scene = document.getElementById('scene');
+      var scene = document.getElementById("scene");
       var parallaxInstance = new Parallax(scene);
 
-      var scene2 = document.getElementById('scene2');
+      var scene2 = document.getElementById("scene2");
       var parallaxInstance = new Parallax(scene2);
-     
+
       const tabs = document.querySelectorAll("[data-tab]");
-      tabs.forEach((tab)=>{
-        tab.addEventListener("click", ()=>{
-          tabs.forEach((tab)=>{tab.classList.remove("content__btn_active")})
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          tabs.forEach((tab) => {
+            tab.classList.remove("content__btn_active");
+          });
           tab.classList.add("content__btn_active");
         });
-        console.log("aa");
-      })
+      });
     </script>
   </body>
 </html>
