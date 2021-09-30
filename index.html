@@ -10,13 +10,16 @@
   </head>
   <body>
     <main class="main">
-      <div id="scene" data-relative-input="true">
-        <img src="./images/main-img.png" class="main__img" alt="" data-depth="0.6"/>
+      <div id="scene-wrapper">
+        <div id="scene" data-relative-input="true">
+        <div  data-depth="0.1" class="main__img">
+          <img src="./images/main-img.png"  alt=""/>
+        </div>
         <div class="main__big-pizza" data-depth="0.4">
           <img src="./images/big-pizza.png" data-depth="0.2" alt="" />
         </div>
+        </div>
       </div>
-
       <div class="container header__container">
         <div class="header__links">
           <a href="#" class="header__link">Payment</a>
@@ -250,7 +253,7 @@
     <div class="form-block">
       <div id="scene2" data-relative-input="true">
        
-        <img src="./images/bg-form.png" data-depth="0.2" class="scene2-bg" alt="">
+        <img src="./images/bg-form.png" data-depth="0.1" class="scene2-bg" alt="">
       </div>
      
       <div class="container form-block__container">

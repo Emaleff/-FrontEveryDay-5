@@ -12,11 +12,11 @@
   margin: 0;
   padding: 0;
 }
+
 .main {
   background: #f0f5fb;
   position: relative;
   box-sizing: border-box;
-  overflow: hidden;
 }
 .container {
   max-width: 1160px;
@@ -133,8 +133,15 @@
 .main__img {
   position: absolute;
   width: 100%;
-  left: 0;
+  margin-right: 30px;
+  left: 0px;
   bottom: 178px;
+  padding-right: 30px;
+}
+.main__img img {
+  width: 100%;
+  position: relative;
+  right: 30px;
 }
 .main__tomato {
   position: absolute;
@@ -415,10 +422,27 @@
   background-size: 100% 100%;
   background-position: center;
   width: 263px;
+  border: 2px solid #eceef7;
+  border-radius: 15px;
   padding-bottom: 8px;
   text-align: center;
 }
+.pizza__item::after {
+  content: "";
+  bottom: -48px;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border-width: 0 2px 2px 0;
+  border-radius: 0 0 15px 0;
+  border-style: solid;
+  border-color: #eceef6;
+  position: absolute;
+  background: white;
+  width: 45px;
+  height: 45px;
+}
 .pizza__line {
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -503,12 +527,13 @@
 }
 .pizza__buy {
   width: 33px;
+  z-index: 1;
   /* margin-left: auto;
   margin-right: auto;
   margin-top: 18px;
   position: relative; */
   position: absolute;
-  bottom: -8px;
+  bottom: -32px;
   left: 50%;
   transform: translate(-50%, -50%);
   height: 33px;
@@ -535,7 +560,7 @@
   display: grid;
   grid-template-columns: repeat(4, 265px);
   grid-column-gap: 20px;
-  grid-row-gap: 10px;
+  grid-row-gap: 35px;
   justify-content: center;
   align-items: baseline;
 }
@@ -637,9 +662,22 @@
 #burger {
   display: none;
 }
-#scene {
+#scene-wrapper {
+  overflow-y: visible;
   position: absolute;
   top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 50px;
+}
+#scene::-webkit-scrollbar {
+  width: 0;
+}
+#scene {
+  overflow-x: hidden;
+  position: absolute;
+  top: 20px;
   left: 0;
   height: 100%;
   width: 100%;
@@ -657,8 +695,13 @@
   height: 100%;
   top: 0;
   left: 0;
+  z-index: 1;
+  text-align: center;
 }
 .scene2-bg {
-  width: 100%;
+  width: 101%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   padding-top: 100px;
 }
