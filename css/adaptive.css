@@ -1,3 +1,13 @@
+@media screen and (max-width: 2560px) {
+  .main__big-pizza {
+    padding-left: 32%;
+  }
+}
+@media screen and (max-width: 1600px) {
+  .main__big-pizza {
+    padding-left: 27%;
+  }
+}
 @media screen and (max-width: 1180px) {
   .swiper div img {
     width: 100%;
